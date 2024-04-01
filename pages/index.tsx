@@ -34,10 +34,11 @@ export default function Home({
   // }, []);
   return (
     <div
-    // className={`${
-    //   resolvedTheme === "dark" ? "dark" : ""
-    // } static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none`}
-    // dir={`${i18n.language == "en" ? "ltr" : "rtl"}`}
+      className="static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none"
+      // className={`${
+      //   resolvedTheme === "dark" ? "dark" : ""
+      // } static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none`}
+      // dir={`${i18n.language == "en" ? "ltr" : "rtl"}`}
     >
       {/* navbar */}
       <Navbar />
