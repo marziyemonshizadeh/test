@@ -4,7 +4,6 @@ import AboutMe from "@/components/AboutMe";
 import ConnectMe from "@/components/ConnectMe";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
-import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
 import MyInfoModel from "@/models/myInfo";
 import ProjectModel from "@/models/project";
@@ -14,7 +13,6 @@ import connectToDB from "@/utils/db";
 import { useTheme } from "next-themes";
 // import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import i18n from "../i18n";
 
 export default function Home({
   projects,
@@ -36,10 +34,10 @@ export default function Home({
   // }, []);
   return (
     <div
-      className={`${
-        resolvedTheme === "dark" ? "dark" : ""
-      } static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none`}
-      dir={`${i18n.language == "en" ? "ltr" : "rtl"}`}
+    // className={`${
+    //   resolvedTheme === "dark" ? "dark" : ""
+    // } static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none`}
+    // dir={`${i18n.language == "en" ? "ltr" : "rtl"}`}
     >
       {/* navbar */}
       <Navbar />
@@ -47,7 +45,7 @@ export default function Home({
       {/* {router.asPath !== "/#hero" && <ScrollToTopBtn />} */}
       {/* hero */}
       <div id="hero" className="snap-start h-screen">
-        <Hero
+        {/* <Hero
           MyInfo={MyInfo}
           job={t("job")}
           Typewriter1={t("Typewriter1")}
@@ -61,7 +59,7 @@ export default function Home({
           librariesTitle={t("librariesTitle")}
           ProjectsTitle={t("ProjectsTitle")}
           ConnectMeTitle={t("ConnectMeTitle")}
-        />
+        /> */}
       </div>
       {/* about me */}
       <div id="aboutMe" className="snap-center h-screen">
