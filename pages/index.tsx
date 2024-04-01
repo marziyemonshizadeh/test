@@ -1,4 +1,4 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { InferGetStaticPropsType } from "next";
 // import { useEffect } from "react";
 import AboutMe from "@/components/AboutMe";
 import ConnectMe from "@/components/ConnectMe";
@@ -97,7 +97,7 @@ export default function Home({
     </div>
   );
 }
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   // first connect to db
   connectToDB();
   console.log("connect to db in root :)");
