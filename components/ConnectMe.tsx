@@ -96,15 +96,15 @@ export default function ConnectMe({
       >
         <div className="flex justify-center items-center">
           <FaPhoneAlt className="text-pink-500 mx-2" />
-          {/* {Object.assign({}, MyInfo)[0].phoneNumber} */}
+          {Object.assign({}, MyInfo)[0].phoneNumber}
         </div>
         <div className="flex justify-center items-center gap-3">
           <FaEnvelope className="text-pink-500" />
-          {/* {Object.assign({}, MyInfo)[0].mail} */}
+          {Object.assign({}, MyInfo)[0].mail}
         </div>
         <div className="flex justify-center items-center gap-3">
           <FaMapMarkerAlt className="text-pink-500" />
-          {/* {Object.assign({}, MyInfo)[0].address} */}
+          {Object.assign({}, MyInfo)[0].address}
         </div>
         <form
           className="max-w-[250px] mx-auto m-5"
