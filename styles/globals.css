@@ -2,32 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer components{
+    .heroBtn{
+        @apply tracking-widest p-2 cursor-pointer hover:text-pink-500
+    } 
+    .inputStyle{
+        @apply dark:bg-zinc-700 bg-zinc-200 border-none outline-none my-1 dark:text-slate-200 text-slate-800 text-sm rounded-lg block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400
+    } 
+    .link{
+        @apply font-bold hover:text-pink-500
+    }
+    .title{
+        @apply absolute md:top-20 top-8 tracking-[5px] text-center text-2xl uppercase my-5
+    }
+    .underlineStyle{
+        @apply underline decoration-pink-500
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    }
 }

@@ -1,13 +1,89 @@
-import { Inter } from "next/font/google";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { useRouter } from "next/router";
+// import { useEffect } from "react";
+import Navbar from "@/components/navbar";
+import connectToDB from "@/utils/db";
+import { useTranslation } from "react-i18next";
+// import i18n from "../i18n";
 
-const inter = Inter({ subsets: ["latin"] });
+export default function Home({
+  projects,
+  skills,
+  // libraries,
+  MyInfo,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  const router = useRouter();
+  const { t } = useTranslation();
+  // const { resolvedTheme } = useTheme();
 
-export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+    <div
+      className={` static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none`}
+      // dir={`${i18n.language == "en" ? "ltr" : "rtl"}`}
     >
-      test
-    </main>
+      {/* navbar */}
+      <Navbar />
+      {/* {router.asPath !== "/#hero" && <ScrollToTopBtn />} */}
+      one error in hero component
+      {/* hero */}
+      {/* <div id="hero" className="snap-start h-screen">
+        <Hero
+          MyInfo={MyInfo}
+          job={t("job")}
+          Typewriter1={t("Typewriter1")}
+          Typewriter2={t("Typewriter2")}
+          Typewriter3={t("Typewriter3")}
+          Typewriter4={t("Typewriter4")}
+          Typewriter5={t("Typewriter5")}
+          Typewriter6={t("Typewriter6")}
+          aboutMeTitle={t("aboutMeTitle")}
+          SkillsTitle={t("SkillsTitle")}
+          librariesTitle={t("librariesTitle")}
+          ProjectsTitle={t("ProjectsTitle")}
+          ConnectMeTitle={t("ConnectMeTitle")}
+        />
+      </div> */}
+      {/* about me */}
+      {/* <div id="aboutMe" className="snap-center h-screen">
+        <AboutMe
+          title={t("aboutMeTitle")}
+          aboutMeLitleBg={t("aboutMeLitleBg")}
+          description={t("description")}
+        />
+      </div> */}
+      {/* skills */}
+      {/* <div id="skills" className="snap-start h-screen">
+        <Skills skills={skills} title={t("SkillsTitle")} />
+      </div> */}
+      {/* projects */}
+      {/* <div id="projects" className="snap-center h-screen">
+        <Projects projects={projects} title={t("ProjectsTitle")} />
+      </div> */}
+      {/* connect me */}
+      {/* <div id="connectMe" className="snap-center h-screen">
+        <ConnectMe
+          MyInfo={MyInfo}
+          title={t("ConnectMeTitle")}
+          nameInput={t("nameInput")}
+          nameInputError={t("nameInputError")}
+          emailInput={t("emailInput")}
+          emailInputError={t("emailInputError")}
+          subjectInput={t("subjectInput")}
+          subjectInputError={t("subjectInputError")}
+          bodyInput={t("bodyInput")}
+          bodyInputError={t("bodyInputError")}
+          SubmitBtnTxt={t("SubmitBtnTxt")}
+        />
+      </div> */}
+    </div>
   );
 }
+export const getStaticProps: GetStaticProps = async () => {
+  // first connect to db
+  connectToDB();
+  console.log("connect to db in root :)");
+  return {
+    props: {},
+    revalidate: 60 * 60 * 12,
+  };
+};
