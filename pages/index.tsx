@@ -1,5 +1,4 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { useRouter } from "next/router";
 // import { useEffect } from "react";
 import AboutMe from "@/components/AboutMe";
 import ConnectMe from "@/components/ConnectMe";
@@ -13,8 +12,9 @@ import SkillModel from "@/models/skill";
 import { myInfo, project, skill } from "@/types/typings";
 import connectToDB from "@/utils/db";
 import { useTheme } from "next-themes";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { IoMdMoon, IoMdSunny } from "react-icons/io";
 import i18n from "../i18n";
 
 export default function Home({
@@ -23,18 +23,18 @@ export default function Home({
   // libraries,
   MyInfo,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const router = useRouter();
+  // const router = useRouter();
   const { t } = useTranslation();
   const { resolvedTheme } = useTheme();
-  useEffect(() => {
-    const handleContextmenu = (e: { preventDefault: () => void }) => {
-      e.preventDefault();
-    };
-    document.addEventListener("contextmenu", handleContextmenu);
-    return function cleanup() {
-      document.removeEventListener("contextmenu", handleContextmenu);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleContextmenu = (e: { preventDefault: () => void }) => {
+  //     e.preventDefault();
+  //   };
+  //   document.addEventListener("contextmenu", handleContextmenu);
+  //   return function cleanup() {
+  //     document.removeEventListener("contextmenu", handleContextmenu);
+  //   };
+  // }, []);
   return (
     <div
       className={`${
@@ -44,8 +44,8 @@ export default function Home({
     >
       {/* navbar */}
       <Navbar />
+
       {/* {router.asPath !== "/#hero" && <ScrollToTopBtn />} */}
-      one error in hero component
       {/* hero */}
       <div id="hero" className="snap-start h-screen">
         <Hero
@@ -64,6 +64,8 @@ export default function Home({
           ConnectMeTitle={t("ConnectMeTitle")}
         />
       </div>
+      <IoMdMoon />
+      <IoMdSunny />
       {/* about me */}
       <div id="aboutMe" className="snap-center h-screen">
         <AboutMe
