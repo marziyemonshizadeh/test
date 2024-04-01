@@ -22,7 +22,7 @@ export default function Hero({
       <img
         width={100}
         height={100}
-        src="/images/4.jpg"
+        src="/images/5.jpg"
         alt="profile"
         className="relative object-cover rounded-full w-32 h-32 mx-auto select-none"
       />

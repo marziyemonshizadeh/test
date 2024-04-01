@@ -14,7 +14,6 @@ import connectToDB from "@/utils/db";
 import { useTheme } from "next-themes";
 // import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { IoMdMoon, IoMdSunny } from "react-icons/io";
 import i18n from "../i18n";
 
 export default function Home({
@@ -64,8 +63,6 @@ export default function Home({
           ConnectMeTitle={t("ConnectMeTitle")}
         />
       </div>
-      <IoMdMoon />
-      <IoMdSunny />
       {/* about me */}
       <div id="aboutMe" className="snap-center h-screen">
         <AboutMe
