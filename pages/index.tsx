@@ -9,7 +9,6 @@ import { useTheme } from "next-themes";
 // import { useEffect } from "react";
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
-import Providers from "@/components/provider";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 
@@ -35,53 +34,53 @@ export default function Home({
   console.log("skills", skills);
   console.log("MyInfo", MyInfo);
   return (
-    <Providers>
-      <div
-        className="static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none"
-        // className={`${
-        //   resolvedTheme === "dark" ? "dark" : ""
-        // } static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none`}
-        dir={`${i18n.language == "en" ? "ltr" : "rtl"}`}
-      >
-        {/* navbar */}
-        <Navbar />
-        {/* {router.asPath !== "/#hero" && <ScrollToTopBtn />} */}
-        {/* hero */}
-        <div id="hero" className="snap-start h-screen">
-          <Hero
-            MyInfo={MyInfo}
-            job={t("job")}
-            Typewriter1={t("Typewriter1")}
-            Typewriter2={t("Typewriter2")}
-            Typewriter3={t("Typewriter3")}
-            Typewriter4={t("Typewriter4")}
-            Typewriter5={t("Typewriter5")}
-            Typewriter6={t("Typewriter6")}
-            aboutMeTitle={t("aboutMeTitle")}
-            SkillsTitle={t("SkillsTitle")}
-            librariesTitle={t("librariesTitle")}
-            ProjectsTitle={t("ProjectsTitle")}
-            ConnectMeTitle={t("ConnectMeTitle")}
-          />
-        </div>
-        {/* about me */}
-        {/* <div id="aboutMe" className="snap-center h-screen">
+    // <Providers>
+    <div
+      className="static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none"
+      // className={`${
+      //   resolvedTheme === "dark" ? "dark" : ""
+      // } static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none`}
+      dir={`${i18n.language == "en" ? "ltr" : "rtl"}`}
+    >
+      {/* navbar */}
+      <Navbar />
+      {/* {router.asPath !== "/#hero" && <ScrollToTopBtn />} */}
+      {/* hero */}
+      <div id="hero" className="snap-start h-screen">
+        <Hero
+          MyInfo={MyInfo}
+          job={t("job")}
+          Typewriter1={t("Typewriter1")}
+          Typewriter2={t("Typewriter2")}
+          Typewriter3={t("Typewriter3")}
+          Typewriter4={t("Typewriter4")}
+          Typewriter5={t("Typewriter5")}
+          Typewriter6={t("Typewriter6")}
+          aboutMeTitle={t("aboutMeTitle")}
+          SkillsTitle={t("SkillsTitle")}
+          librariesTitle={t("librariesTitle")}
+          ProjectsTitle={t("ProjectsTitle")}
+          ConnectMeTitle={t("ConnectMeTitle")}
+        />
+      </div>
+      {/* about me */}
+      {/* <div id="aboutMe" className="snap-center h-screen">
           <AboutMe
             title={t("aboutMeTitle")}
             aboutMeLitleBg={t("aboutMeLitleBg")}
             description={t("description")}
           />
         </div> */}
-        {/* skills */}
-        {/* <div id="skills" className="snap-start h-screen">
+      {/* skills */}
+      {/* <div id="skills" className="snap-start h-screen">
           <Skills skills={skills} title={t("SkillsTitle")} />
         </div> */}
-        {/* projects */}
-        {/* <div id="projects" className="snap-center h-screen">
+      {/* projects */}
+      {/* <div id="projects" className="snap-center h-screen">
           <Projects projects={projects} title={t("ProjectsTitle")} />
         </div> */}
-        {/* connect me */}
-        {/* <div id="connectMe" className="snap-center h-screen">
+      {/* connect me */}
+      {/* <div id="connectMe" className="snap-center h-screen">
           <ConnectMe
             MyInfo={MyInfo}
             title={t("ConnectMeTitle")}
@@ -96,8 +95,8 @@ export default function Home({
             SubmitBtnTxt={t("SubmitBtnTxt")}
           />
         </div> */}
-      </div>
-    </Providers>
+    </div>
+    // </Providers>
   );
 }
 export const getStaticProps = async () => {
