@@ -64,7 +64,6 @@ function Navbar() {
           <option value="fa">fa</option>
         </select>
         <Link href="#">
-          1
           <ThemeSwitch />
         </Link>
       </motion.section>
